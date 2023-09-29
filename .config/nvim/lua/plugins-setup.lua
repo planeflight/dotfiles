@@ -36,6 +36,7 @@ return packer.startup(function(use)
     use("ellisonleao/gruvbox.nvim")
     use("navarasu/onedark.nvim")
     use("drewtempelmeyer/palenight.vim")
+    use("catppuccin/nvim")
 
     use("lukas-reineke/indent-blankline.nvim")
 
@@ -47,6 +48,7 @@ return packer.startup(function(use)
     use("numToStr/Comment.nvim")
 
     -- file explorer
+    use("stevearc/oil.nvim")
     use("nvim-tree/nvim-tree.lua")
 
     -- vs-code like icons
@@ -104,11 +106,47 @@ return packer.startup(function(use)
     use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
     use("airblade/vim-gitgutter")  -- show git edit, add, remove, etc on the left
 
-    -- terminal
-    use("akinsho/toggleterm.nvim")
     -- notes
     use("vimwiki/vimwiki")
+    use {
+        "nvim-neorg/neorg",
+        config = function()
+            require('neorg').setup {
+                load = {
+                    ["core.defaults"] = {}, -- Loads default behaviour
+                    ["core.concealer"] = {}, -- Adds pretty icons to your documents
+                    ["core.dirman"] = { -- Manages Neorg workspaces
+                        config = {
+                            workspaces = {
+                                notes = "~/notes",
+                            },
+                            index = "index.norg"
+                        },
+                    },
+                    ["core.summary"] = {}, -- generate summaries for workspaces
+                    ["core.journal"] = {},
+                },
+            }
+        end,
+        run = ":Neorg sync-parsers",
+        requires = "nvim-lua/plenary.nvim",
+    }
+    use({
+        "epwalsh/obsidian.nvim",
+        requires = {
+            -- Required.
+            "nvim-lua/plenary.nvim",
 
+            -- see below for full list of optional dependencies 👇
+        },
+        config = function()
+            require("obsidian").setup({
+                dir = "~/vaults",
+
+                -- see below for full list of options 👇
+            })
+        end,
+    })
     -- markdown preview
     use({
         "iamcco/markdown-preview.nvim",

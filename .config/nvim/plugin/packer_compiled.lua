@@ -154,6 +154,17 @@ _G.packer_plugins = {
     path = "/home/olivier/.local/share/nvim/site/pack/packer/start/neodev.nvim",
     url = "https://github.com/folke/neodev.nvim"
   },
+  neorg = {
+    config = { "\27LJ\2\nÿ\1\0\0\a\0\16\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\14\0005\3\3\0004\4\0\0=\4\4\0034\4\0\0=\4\5\0035\4\t\0005\5\a\0005\6\6\0=\6\b\5=\5\n\4=\4\v\0034\4\0\0=\4\f\0034\4\0\0=\4\r\3=\3\15\2B\0\2\1K\0\1\0\tload\1\0\0\17core.journal\17core.summary\16core.dirman\vconfig\1\0\0\15workspaces\1\0\1\nindex\15index.norg\1\0\1\nnotes\f~/notes\19core.concealer\18core.defaults\1\0\0\nsetup\nneorg\frequire\0" },
+    loaded = true,
+    path = "/home/olivier/.local/share/nvim/site/pack/packer/start/neorg",
+    url = "https://github.com/nvim-neorg/neorg"
+  },
+  nvim = {
+    loaded = true,
+    path = "/home/olivier/.local/share/nvim/site/pack/packer/start/nvim",
+    url = "https://github.com/catppuccin/nvim"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/olivier/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
@@ -206,6 +217,17 @@ _G.packer_plugins = {
     path = "/home/olivier/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
+  ["obsidian.nvim"] = {
+    config = { "\27LJ\2\nJ\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\bdir\r~/vaults\nsetup\robsidian\frequire\0" },
+    loaded = true,
+    path = "/home/olivier/.local/share/nvim/site/pack/packer/start/obsidian.nvim",
+    url = "https://github.com/epwalsh/obsidian.nvim"
+  },
+  ["oil.nvim"] = {
+    loaded = true,
+    path = "/home/olivier/.local/share/nvim/site/pack/packer/start/oil.nvim",
+    url = "https://github.com/stevearc/oil.nvim"
+  },
   ["onedark.nvim"] = {
     loaded = true,
     path = "/home/olivier/.local/share/nvim/site/pack/packer/start/onedark.nvim",
@@ -241,11 +263,6 @@ _G.packer_plugins = {
     path = "/home/olivier/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["toggleterm.nvim"] = {
-    loaded = true,
-    path = "/home/olivier/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
-    url = "https://github.com/akinsho/toggleterm.nvim"
-  },
   ["vim-ReplaceWithRegister"] = {
     loaded = true,
     path = "/home/olivier/.local/share/nvim/site/pack/packer/start/vim-ReplaceWithRegister",
@@ -279,6 +296,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: obsidian.nvim
+time([[Config for obsidian.nvim]], true)
+try_loadstring("\27LJ\2\nJ\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\bdir\r~/vaults\nsetup\robsidian\frequire\0", "config", "obsidian.nvim")
+time([[Config for obsidian.nvim]], false)
+-- Config for: neorg
+time([[Config for neorg]], true)
+try_loadstring("\27LJ\2\nÿ\1\0\0\a\0\16\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\14\0005\3\3\0004\4\0\0=\4\4\0034\4\0\0=\4\5\0035\4\t\0005\5\a\0005\6\6\0=\6\b\5=\5\n\4=\4\v\0034\4\0\0=\4\f\0034\4\0\0=\4\r\3=\3\15\2B\0\2\1K\0\1\0\tload\1\0\0\17core.journal\17core.summary\16core.dirman\vconfig\1\0\0\15workspaces\1\0\1\nindex\15index.norg\1\0\1\nnotes\f~/notes\19core.concealer\18core.defaults\1\0\0\nsetup\nneorg\frequire\0", "config", "neorg")
+time([[Config for neorg]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
