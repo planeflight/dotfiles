@@ -22,3 +22,4 @@ keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
 
 -- Nvim Tree
 keymap.set("n", "<C-e>", ":NvimTreeToggle<CR>")
+keymap.set("n", "<leader>ee", ":NvimTreeToggle<CR>")
