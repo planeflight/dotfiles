@@ -154,23 +154,6 @@ require("lazy").setup({
         requires = "nvim-lua/plenary.nvim",
     },
     {
-        "epwalsh/obsidian.nvim",
-        lazy = true,
-        event = {
-            -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
-            -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
-            "BufReadPre path/to/my-vault/**.md",
-            "BufNewFile path/to/my-vault/**.md",
-        },
-        dependencies = {
-            -- Required.
-            "nvim-lua/plenary.nvim",
-        },
-        opts = {
-            dir = "~/vaults",
-        },
-    },
-    {
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
     },
@@ -212,6 +195,9 @@ require("lazy").setup({
             -- Disable folding on alpha buffer
             vim.cmd([[autocmd FileType alpha setlocal nofoldenable]])
         end,
+    },
+    {
+        "ThePrimeagen/harpoon",
     }
 
 })
@@ -437,6 +423,6 @@ lspconfig.rust_analyzer.setup {
     }
 }
 
-require("colorscheme")
-require("options")
-require("keymaps")
+require("core.colorscheme")
+require("core.options")
+require("core.keymaps")

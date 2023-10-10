@@ -11,6 +11,14 @@ keymap.set("n", "<leader>fc", ":Telescope grep_string<cr>")
 keymap.set("n", "<leader>fb", ":Telescope buffers<cr>")
 keymap.set("n", "<leader>fh", ":Telescope help_tags<cr>")
 
+-- harpoon
+-- harpoon mark
+keymap.set("n", "<leader>hm", ":lua require('harpoon.mark').add_file()<cr>")
+-- harpoon find file
+keymap.set("n", "<leader>hf", ":lua require('harpoon.ui').toggle_quick_menu()<cr>")
+
+keymap.set("n", "<leader>fm", ":lua require('harpoon.ui').toggle_quick_menu()<cr>")
+
 -- navigation
 keymap.set("i", "<C-h>", "<Left>")
 keymap.set("i", "<C-j>", "<Down>")
