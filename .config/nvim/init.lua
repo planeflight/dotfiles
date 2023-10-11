@@ -27,6 +27,7 @@ require("lazy").setup({
         },
         lazy = false,
     },
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
     {
         'stevearc/oil.nvim',
@@ -34,7 +35,6 @@ require("lazy").setup({
         -- Optional dependencies
         dependencies = { "nvim-tree/nvim-web-devicons" },
     },
-
     {
         "nvim-lualine/lualine.nvim",
         opts = {
@@ -79,7 +79,6 @@ require("lazy").setup({
         },
         build = ':TSUpdate',
     },
-
     {
         -- LSP Configuration & Plugins
         'neovim/nvim-lspconfig',
@@ -111,7 +110,6 @@ require("lazy").setup({
             'rafamadriz/friendly-snippets',
         },
     },
-
     {
         "nvim-tree/nvim-tree.lua",
         version = "*",
@@ -129,6 +127,7 @@ require("lazy").setup({
         opts = {} -- this is equalent to setup({}) function
     },
     "lewis6991/gitsigns.nvim",
+
 
     {
         "nvim-neorg/neorg",
@@ -153,6 +152,7 @@ require("lazy").setup({
         run = ":Neorg sync-parsers",
         requires = "nvim-lua/plenary.nvim",
     },
+
     {
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
@@ -199,7 +199,6 @@ require("lazy").setup({
     {
         "ThePrimeagen/harpoon",
     }
-
 })
 
 
@@ -423,6 +422,8 @@ lspconfig.rust_analyzer.setup {
     }
 }
 
-require("core.colorscheme")
+require("ibl").setup()
+
 require("core.options")
 require("core.keymaps")
+require("core.colorscheme")
