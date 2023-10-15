@@ -6,6 +6,7 @@ return {
 
     "tpope/vim-surround",
     "inkarkat/vim-ReplaceWithRegister",
+    "tpope/vim-fugitive",
 
     {
         'numToStr/Comment.nvim',
@@ -15,7 +16,6 @@ return {
         lazy = false,
     },
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
-
     {
         'stevearc/oil.nvim',
         opts = {},

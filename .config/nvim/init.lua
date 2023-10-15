@@ -11,17 +11,13 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup(require("plugins.init"))
+require("lazy").setup(require("planeflight.plugins.init"))
 
-require("plugins.configs")
-require("plugins.configs.nvim-treesitter")
-
-require("plugins.configs.lsp")
-require("plugins.configs.neodev")
-require("plugins.configs.nvim-cmp")
-require("plugins.configs.mason")
+require("planeflight.plugins.configs.nvim-treesitter")
+require("planeflight.plugins.configs.lsp")
+require("planeflight.plugins.configs.ibl")
 
 
-require("core.options")
-require("core.keymaps")
-require("core.colorscheme")
+require("planeflight.core.options")
+require("planeflight.core.keymaps")
+require("planeflight.core.colorscheme")
