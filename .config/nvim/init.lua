@@ -16,7 +16,7 @@ require("lazy").setup(require("planeflight.plugins.init"))
 require("planeflight.plugins.configs.nvim-treesitter")
 require("planeflight.plugins.configs.lsp")
 require("planeflight.plugins.configs.ibl")
-
+require("planeflight.plugins.configs.gitsigns")
 
 require("planeflight.core.options")
 require("planeflight.core.keymaps")

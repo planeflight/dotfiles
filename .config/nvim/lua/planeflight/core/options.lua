@@ -10,7 +10,7 @@ opt.expandtab = true
 opt.autoindent = true
 
 -- line wrapping
-opt.wrap = false
+opt.wrap = true
 opt.colorcolumn = "80"
 
 -- cursor
@@ -27,6 +27,9 @@ opt.incsearch = true
 
 -- backspace
 opt.backspace = "indent,eol,start"
+
+-- clipboard
+opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 
 -- mouse
 opt.mouse = 'a'

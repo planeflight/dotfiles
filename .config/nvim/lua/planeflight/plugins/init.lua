@@ -2,7 +2,8 @@ return {
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     "ellisonleao/gruvbox.nvim",
     "navarasu/onedark.nvim",
-    "drewtempelmeyer/palenight.vim",
+    "sainnhe/sonokai",
+    "marko-cerovac/material.nvim",
 
     "tpope/vim-surround",
     "inkarkat/vim-ReplaceWithRegister",
