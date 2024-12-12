@@ -1,6 +1,5 @@
 return {
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-  { "folke/tokyonight.nvim" },
 
   "nvim-pack/nvim-spectre",
 
@@ -158,41 +157,22 @@ return {
   "christoomey/vim-tmux-navigator",
 
   {
-    "goolord/alpha-nvim",
-    event = "VimEnter",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      local alpha = require("alpha")
-      local dashboard = require("alpha.themes.dashboard")
+    "folke/snacks.nvim",
+    opts = {
+      dashboard = {
+        -- your dashboard configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
 
-      -- Set header
-      dashboard.section.header.val = {
-        "                                                     ",
-        "  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
-        "  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ",
-        "  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ",
-        "  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ",
-        "  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
-        "  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
-        "                                                     ",
-      }
-
-      -- Set menu
-      dashboard.section.buttons.val = {
-        dashboard.button("e", "  > New File", "<cmd>ene<CR>"),
-        dashboard.button("SPC ee", "  > Toggle file explorer", "<cmd>NvimTreeToggle<CR>"),
-        dashboard.button("SPC ff", "󰱼 > Find File", "<cmd>Telescope find_files<CR>"),
-        dashboard.button("SPC fs", "  > Find Word", "<cmd>Telescope live_grep<CR>"),
-        dashboard.button("SPC wr", "󰁯  > Restore Session For Current Directory", "<cmd>SessionRestore<CR>"),
-        dashboard.button("q", " > Quit NVIM", "<cmd>qa<CR>"),
-      }
-
-      -- Send config to alpha
-      alpha.setup(dashboard.opts)
-
-      -- Disable folding on alpha buffer
-      vim.cmd([[autocmd FileType alpha setlocal nofoldenable]])
-    end,
+        sections = {
+          { section = "header" },
+          { icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
+          { icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
+          { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
+          { section = "startup" },
+        },
+      },
+    },
   },
   {
     "ThePrimeagen/harpoon",
@@ -201,6 +181,15 @@ return {
   {
     "stevearc/conform.nvim",
     opts = {},
+  },
+  {
+    "lervag/vimtex",
+    lazy = false,
+    init = function()
+      vim.g.vimtex_view_method = "general"
+      vim.opt.conceallevel = 1
+      vim.g.tex_conceal = "abdmg"
+    end,
   },
   -- debugger
   {
