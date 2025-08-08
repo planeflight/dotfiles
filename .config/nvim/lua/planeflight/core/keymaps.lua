@@ -36,6 +36,9 @@ keymap.set("i", "<C-l>", "<Right>")
 keymap.set("n", "<C-e>", ":NvimTreeToggle<CR>")
 keymap.set("n", "<leader>ee", ":NvimTreeToggle<CR>")
 
+-- Oil
+keymap.set("n", "-", ":Oil<cr>", { desc = "Open parent directory" })
+
 -- Diagnostic keymaps
 keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
 keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
