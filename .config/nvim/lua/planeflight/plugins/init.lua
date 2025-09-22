@@ -42,20 +42,6 @@ return {
   },
 
   {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    init = function()
-      vim.o.timeout = true
-      vim.o.timeoutlen = 300
-    end,
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    },
-  },
-
-  {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {
@@ -155,39 +141,8 @@ return {
     end,
   },
 
-  {
-    "OXY2DEV/markview.nvim",
-    lazy = false,
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "nvim-tree/nvim-web-devicons", -- Used by the code bloxks
-    },
-
-    config = function()
-      require("markview").setup()
-    end,
-  },
-
   "christoomey/vim-tmux-navigator",
 
-  {
-    "folke/snacks.nvim",
-    opts = {
-      dashboard = {
-        -- your dashboard configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-
-        sections = {
-          { section = "header" },
-          { icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
-          { icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
-          { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
-          { section = "startup" },
-        },
-      },
-    },
-  },
   {
     "ThePrimeagen/harpoon",
   },

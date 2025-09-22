@@ -141,8 +141,7 @@ cmp.setup({
   },
 })
 
-local lspconfig = require("lspconfig")
-lspconfig.rust_analyzer.setup({
+vim.lsp.config("rust_analyzer", {
   capabilities = capabilities,
   on_attach = on_attach,
   cmd = {
@@ -152,6 +151,7 @@ lspconfig.rust_analyzer.setup({
     "rust-analyzer",
   },
 })
+vim.lsp.enable({ "rust_analyzer" })
 
 local mason_tool_installer = require("mason-tool-installer")
 mason_tool_installer.setup({
